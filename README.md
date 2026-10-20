@@ -6,5 +6,4 @@ apuração, com os modelos de projeção hier e fine.
 Abra `index.html` (ou a página do GitHub Pages) e use o botão **tocar** ou a barra
 de tempo. `#19h00` na URL abre direto nesse horário.
 
-Dados: arquivos públicos de resultados do TSE. Gráficos: [Plotly.js](https://plotly.com/javascript/)
-2.35.2 (licença MIT), incluído como `plotly.min.js`.
+Dados: arquivos públicos de resultados do TSE.
