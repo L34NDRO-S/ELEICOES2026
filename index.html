@@ -1366,7 +1366,7 @@ window.dispatchEvent(new Event('resize'));
     const fmt = v => v == null ? '—' : Number(v).toFixed(1).replace('.', ',');
     document.getElementById('k-hora').textContent = l.hora.replace('h', ':');
     txt.innerHTML = `quadro <b>${l.n}</b>/${__EST.length} · <b>${l.hora}</b> · ${fmt(l.secoes)}% das seções · `
-      + `modelo ativo: <b>${l.fonte === 'secao' ? 'por seção (fine)' : 'hier'}</b> · `
+      + `modelo ativo: <b>${l.fonte === 'secao' ? 'fine' : 'hier'}</b> · `
       + (lid && lid[0] === 'CHAMAR' ? `<b style="color:#4ade80">líder afirmado: ${lid[1]}</b>` : 'líder: calado');
   };
   const ir = i => { __i = +i; sl.value = __i; rot(); tick(); };
