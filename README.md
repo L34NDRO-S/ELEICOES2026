@@ -10,7 +10,7 @@ recebe no 2º turno:
 - **fine**: projetor por seção, a partir dos boletins de urna, com tamanho do que
   falta por comparecimento e faixa de 95% calibrada no 2º turno de 2002–2022.
 
-Sem mercado, trading nem saúde do pipeline. Abra `index.html` (ou a página do GitHub Pages) e use o botão **tocar** ou a barra
+Sem mercado, trading, probabilidades nem saúde do pipeline. Abra `index.html` (ou a página do GitHub Pages) e use o botão **tocar** ou a barra
 de tempo. `#19h00` na URL abre direto nesse horário.
 
 ## Limites desta reencenação

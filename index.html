@@ -195,12 +195,11 @@ com faixa conformal calibrada no 2º turno de 2002–2022) e <b>hier</b> (swing 
 hierárquico, TAU de 100 mil votos, sobre os arquivos de zona do TSE). O fine é o principal e o hier a reserva,
 como o seletor decide em produção. Cada quadro usa só o que o TSE já tinha publicado naquele instante.</p>
 <p style="max-width:1100px"><b>Como será o 2º turno:</b> a foto do TSE foi filtrada para Lula e Flávio
-(votos válidos = 13 + 22), que é o que o painel recebe em 25/10. Por isso as linhas "haverá 2º turno" e
-"quem avança" mantêm os nomes do 1º turno e não têm sentido aqui. <b>Diferenças:</b> no 2º turno os modelos usam
+(votos válidos = 13 + 22), que é o que o painel recebe em 25/10. <b>Diferenças:</b> no 2º turno os modelos usam
 o 1º turno de 2026 como referência; aqui isso seria vazamento, então ambos usam a presidencial de <b>2022</b>.
 O atraso dos boletins na CDN é <b>estimado</b> (mediana de 17 min), não medido ao vivo: o aviso de "coleta de
 seções atrasada" vem daí. As projeções <b>não são as que o painel mostrou na noite</b>: são as que estes modelos
-produziriam hoje, e não garantem o desempenho em 25/10. Sem mercado, trading, nem saúde do pipeline.</p>
+produziriam hoje, e não garantem o desempenho em 25/10. Sem mercado, trading, probabilidades nem saúde do pipeline.</p>
 </details>
 
 
@@ -1363,8 +1362,11 @@ tick();
 <script>
 document.querySelectorAll('.cartao').forEach(c => {
   const h = c.querySelector('h2');
-  if (h && /^(Saúde do pipeline|Mercado preditivo|Matriz de cenários|Risco da carteira|Contratos avaliados|Posições e PnL|PnL ao longo|Ordens)/.test(h.textContent.trim())) c.style.display = 'none';
+  if (h && /^(Saúde do pipeline|Probabilidades|Evolução das probabilidades|Mercado preditivo|Matriz de cenários|Risco da carteira|Contratos avaliados|Posições e PnL|PnL ao longo|Ordens)/.test(h.textContent.trim())) c.style.display = 'none';
 });
+const av = [...document.querySelectorAll('.cartao')].find(c => (c.querySelector('h2') || {}).textContent?.trim().startsWith('Avanço da apuração'));
+if (av) { av.classList.remove('col5', 'col6', 'col7'); av.classList.add('col12'); }
+window.dispatchEvent(new Event('resize'));
 </script>
 
 <script>
