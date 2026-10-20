@@ -207,6 +207,7 @@ body.quadro #quadro-titulo{display:flex!important;align-items:baseline;gap:14px;
     <h2>Apuração <span class="fonte tse">oficial TSE</span></h2>
     <p class="sub">o que o TSE publicou até agora, sem nenhuma conta nossa</p>
     <div class="faixa-apur">
+      <div class="kcol">horário<b id="k-hora">—</b><small>relógio do TSE · 04/10/2026</small></div>
       <div class="kcol kprinc">seções totalizadas
         <b><span id="k-apur">—</span><span class="un">%</span></b>
         <div class="barra-apur"><div id="k-barra" style="width:0"></div></div>
@@ -1343,7 +1344,7 @@ document.addEventListener('visibilitychange', () => {
 tick();
 </script>
 
-<style>#c-sub{display:none}#t-rate,#t-lat{display:none}.pill:has(#t-rate),.pill:has(#t-lat){display:none}</style>
+<style>.faixa-apur{grid-template-columns:1fr 2fr repeat(3,1fr)}#c-sub{display:none}#t-rate,#t-lat{display:none}.pill:has(#t-rate),.pill:has(#t-lat){display:none}</style>
 <script>
 document.querySelectorAll('.cartao').forEach(c => {
   const h = c.querySelector('h2');
@@ -1363,6 +1364,7 @@ window.dispatchEvent(new Event('resize'));
     const l = __EST[__i]._lote, inc = __EST[__i].incerteza || {}, dec = inc.decisao || {};
     const lid = dec.vencedor_1t;
     const fmt = v => v == null ? '—' : Number(v).toFixed(1).replace('.', ',');
+    document.getElementById('k-hora').textContent = l.hora.replace('h', ':');
     txt.innerHTML = `quadro <b>${l.n}</b>/${__EST.length} · <b>${l.hora}</b> · ${fmt(l.secoes)}% das seções · `
       + `modelo ativo: <b>${l.fonte === 'secao' ? 'por seção (fine)' : 'hier'}</b> · `
       + (lid && lid[0] === 'CHAMAR' ? `<b style="color:#4ade80">líder afirmado: ${lid[1]}</b>` : 'líder: calado');
